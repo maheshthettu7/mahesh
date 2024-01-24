@@ -3,15 +3,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit
-from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
-from sklearn.neighbors import KNeighborsRegressor
-from sklearn.tree import DecisionTreeRegressor
-from sklearn.ensemble import RandomForestRegressor, AdaBoostRegressor
-from sklearn.svm import SVR
-from sklearn.linear_model import LinearRegression, Ridge, Lasso
-from sklearn.model_selection import RandomizedSearchCV
-from xgboost import XGBRegressor
-import warnings
 streamlit.title("Sample data for model")
 df = pd.read_csv("StudentsPerformance.csv")
 streamlit.dataframe(df.head())
@@ -21,6 +12,22 @@ data=[]
 for i in columns[0:5]:
   choice = streamlit.text_input(f'provide input for {i}','sample data')
   data.append(str(choice))
+for i in columns[5:]:
+  choice = streamlit.text_input(f'provide input for {i}','sample data')
+  data.append(int(choice))
+models = {
+    "Linear Regression": LinearRegression(),
+    "Lasso": Lasso(),
+    "Ridge": Ridge(),
+    "K-Neighbors Regressor": KNeighborsRegressor(),
+    "Decision Tree": DecisionTreeRegressor(),
+    "Random Forest Regressor": RandomForestRegressor(),
+
+    "AdaBoost Regressor": AdaBoostRegressor()
+}
+model_selected=streamlit.selectbox("Pick ml model:", list(models.values()),)
+# pickled_model = pickle.load(open('model.pkl', 'rb'))
+# pickled_model.predict(X_test)
   
   
 
