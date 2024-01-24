@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import pickle
 import streamlit
 streamlit.title("Sample data for model")
 df = pd.read_csv("StudentsPerformance.csv")
@@ -22,14 +23,15 @@ for i in columns[5:]:
   data.append(choice)
 models = ['LinearRegression()','Lasso()','Ridge()','KNeighborsRegressor()','DecisionTreeRegressor()','RandomForestRegressor()','AdaBoostRegressor()']
 model_selected=streamlit.selectbox("Pick ml model:",models) 
-streamlit.text(data)
+streamlit.text('Selected data :')
 x={}
 for i in range(len(data)):
   x[columns[i]] = [data[i]]
 data=pd.DataFrame(data=x)
 streamlit.dataframe(data)
 preprocessing_model = pickle.load(open('preprocesser.pkl', 'rb'))
-# preprocessing_model.transform(
+data=preprocessing_model.transform(data)
+ml_model = pickle.load(open(f'{model_selected}.pkl', 'rb'))
   
   
 
