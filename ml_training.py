@@ -10,7 +10,6 @@ import streamlit
 # from sklearn.svm import SVR
 # from sklearn.linear_model import LinearRegression, Ridge, Lasso
 # from sklearn.model_selection import RandomizedSearchCV
-# from catboost import CatBoostRegressor
 # from xgboost import XGBRegressor
 # import warnings
 # df = pd.read_csv("StudentsPerformance.csv")
