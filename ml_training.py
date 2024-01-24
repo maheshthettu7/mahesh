@@ -16,7 +16,7 @@ gender=streamlit.selectbox("provide input for Gender:", ['female', 'male'])
 re=streamlit.selectbox("provide input for race_ethnicity:", ['group B', 'group C', 'group A', 'group D', 'group E'])
 PLE=streamlit.selectbox("Pick some parental_level_of_education:",["bachelor's degree", 'some college', "master's degree","associate's degree", 'high school', 'some high school'])
 Lunch=streamlit.selectbox("Pick some Lunch:",['standard', 'free/reduced'])
-tpc=streamlit.selectbox("Pick some test_preparation_course:"['none', 'completed'])
+tpc=streamlit.selectbox("Pick some test_preparation_course:",['none', 'completed'])
 data.append([gender,re,PLELunch,tpc])
 for i in columns[5:]:
   choice = streamlit.number_input(f'provide input for {i}')
