@@ -34,7 +34,7 @@ preprocessing_model = pickle.load(open('preprocesser.pkl', 'rb'))
 data=preprocessing_model.transform(data)
 ml_model = pickle.load(open(f'{model_selected}.pkl', 'rb'))
 y_pred=ml_model.predict(data)  
-streamlit.header('Marks Scored in Maths : y_pred')
+streamlit.header(f'Marks Scored in Maths : {y_pred}')
 
   
 
