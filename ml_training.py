@@ -18,6 +18,6 @@ streamlit.dataframe(df.head())
 streamlit.title("input data for ml model")
 columns=['gender', 'race_ethnicity', 'parental_level_of_education', 'lunch','test_preparation_course', 'reading_score','writing_score']
 for i in columns:
-  choice = streamlit.text_input(f"{i}")
+  choice = streamlit.text_input(f'provide input for {i}','sample data')
   
 
