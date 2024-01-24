@@ -4,10 +4,11 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pickle
 import streamlit
-streamlit.title("Sample data for model")
+streamlit.title("Predicting the marks score in maths based on student data")
+streamlit.header("Sample data")
 df = pd.read_csv("StudentsPerformance.csv")
 streamlit.dataframe(df.head())
-streamlit.title("input data for ml model")
+streamlit.header("input data for ml model")
 columns=['gender', 'race_ethnicity', 'parental_level_of_education', 'lunch','test_preparation_course','reading_score','writing_score']
 # for i in columns[:5]:
 #   choice = streamlit.text_input(f'provide input for {i}','sample data')
@@ -32,6 +33,8 @@ streamlit.dataframe(data)
 preprocessing_model = pickle.load(open('preprocesser.pkl', 'rb'))
 data=preprocessing_model.transform(data)
 ml_model = pickle.load(open(f'{model_selected}.pkl', 'rb'))
-  
+y_pred=ml_model.predict(data)  
+streamlit.header('Marks Scored in Maths : y_pred')
+
   
 
