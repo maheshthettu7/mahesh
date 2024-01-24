@@ -16,4 +16,8 @@ streamlit.title("Sample data for model")
 df = pd.read_csv("StudentsPerformance.csv")
 streamlit.dataframe(df.head())
 streamlit.title("input data for ml model")
+columns=['gender', 'race_ethnicity', 'parental_level_of_education', 'lunch','test_preparation_course', 'reading_score','writing_score']
+for i in columns:
+  choice = streamlit.text_input(f"{i}")
+  
 
