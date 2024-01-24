@@ -14,6 +14,7 @@ for i in columns:
   data.append(str(choice))
 models = ['LinearRegression()','Lasso()','Ridge()','KNeighborsRegressor()','DecisionTreeRegressor()','RandomForestRegressor()','AdaBoostRegressor()']
 model_selected=streamlit.selectbox("Pick ml model:",models) 
+streamlit.text(data[5])
 # pickled_model = pickle.load(open('model.pkl', 'rb'))
 # pickled_model.predict(X_test)
   
