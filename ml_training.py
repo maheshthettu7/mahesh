@@ -9,12 +9,15 @@ streamlit.dataframe(df.head())
 streamlit.title("input data for ml model")
 columns=['gender', 'race_ethnicity', 'parental_level_of_education', 'lunch','test_preparation_course','reading_score','writing_score']
 data=[]
-for i in columns:
+for i in columns[:5]:
   choice = streamlit.text_input(f'provide input for {i}','sample data')
   data.append(str(choice))
+for i in columns[5:]:
+  choice = streamlit.number_input(f'provide input for {i}','sample number')
+  data.append(choice)
 models = ['LinearRegression()','Lasso()','Ridge()','KNeighborsRegressor()','DecisionTreeRegressor()','RandomForestRegressor()','AdaBoostRegressor()']
 model_selected=streamlit.selectbox("Pick ml model:",models) 
-streamlit.text(data[5])
+
 # pickled_model = pickle.load(open('model.pkl', 'rb'))
 # pickled_model.predict(X_test)
   
