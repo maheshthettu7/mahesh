@@ -26,7 +26,7 @@ streamlit.text(data)
 x={}
 for i in range(len(data)):
   x[columns[i]] = data[i]
-data=pd.DataFrame(data=x)
+data=pd.DataFrame(data=x,columns=columns)
 streamlit.dataframe(data)
 preprocessing_model = pickle.load(open('preprocesser.pkl', 'rb'))
 # preprocessing_model.transform(
