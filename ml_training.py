@@ -5,9 +5,9 @@ import seaborn as sns
 import pickle
 import streamlit
 streamlit.title("Predicting the marks score in maths based on student data")
-streamlit.header("Sample data")
+# streamlit.header("Sample data")
 df = pd.read_csv("StudentsPerformance.csv")
-streamlit.dataframe(df.head())
+# streamlit.dataframe(df.head())
 streamlit.header("input data for ml model")
 columns=['gender', 'race_ethnicity', 'parental_level_of_education', 'lunch','test_preparation_course','reading_score','writing_score']
 # for i in columns[:5]:
