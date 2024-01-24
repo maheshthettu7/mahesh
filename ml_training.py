@@ -14,7 +14,7 @@ for i in columns[0:5]:
   data.append(str(choice))
 for i in columns[5:]:
   choice = streamlit.text_input(f'provide input for {i}','sample data')
-  data.append(int(choice))
+  # data.append(int(choice))
 models = {
     "Linear Regression": LinearRegression(),
     "Lasso": Lasso(),
