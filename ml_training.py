@@ -13,7 +13,7 @@ for i in columns[:5]:
   choice = streamlit.text_input(f'provide input for {i}','sample data')
   data.append(str(choice))
 for i in columns[5:]:
-  choice = streamlit.number_input(f'provide input for {i}','sample number')
+  choice = streamlit.number_input(f'provide input for {i}')
   data.append(choice)
 models = ['LinearRegression()','Lasso()','Ridge()','KNeighborsRegressor()','DecisionTreeRegressor()','RandomForestRegressor()','AdaBoostRegressor()']
 model_selected=streamlit.selectbox("Pick ml model:",models) 
