@@ -25,8 +25,8 @@ model_selected=streamlit.selectbox("Pick ml model:",models)
 streamlit.text(data)
 x={}
 for i in range(len(data)):
-  x[columns[i]] = data[i]
-data=pd.DataFrame(data=x,columns=columns)
+  x[columns[i]] = [data[i]]
+data=pd.DataFrame(data=x)
 streamlit.dataframe(data)
 preprocessing_model = pickle.load(open('preprocesser.pkl', 'rb'))
 # preprocessing_model.transform(
