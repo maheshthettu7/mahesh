@@ -23,7 +23,10 @@ for i in columns[5:]:
 models = ['LinearRegression()','Lasso()','Ridge()','KNeighborsRegressor()','DecisionTreeRegressor()','RandomForestRegressor()','AdaBoostRegressor()']
 model_selected=streamlit.selectbox("Pick ml model:",models) 
 streamlit.text(data)
-data=pd.DataFrame(data=data,columns=columns)
+x={}
+for i in range(len(data)):
+  x[columns[i]] = x[data[i]] 
+data=pd.DataFrame(data=x)
 streamlit.dataframe(data)
 preprocessing_model = pickle.load(open('preprocesser.pkl', 'rb'))
 # preprocessing_model.transform(
