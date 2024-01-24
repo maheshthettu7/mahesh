@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+# import matplotlib.pyplot as plt
+# import seaborn as sns
 import pickle
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 from sklearn.neighbors import KNeighborsRegressor
@@ -49,8 +49,7 @@ models = {
     "K-Neighbors Regressor": KNeighborsRegressor(),
     "Decision Tree": DecisionTreeRegressor(),
     "Random Forest Regressor": RandomForestRegressor(),
-    "XGBRegressor": XGBRegressor(), 
-    "CatBoosting Regressor": CatBoostRegressor(verbose=False),
+
     "AdaBoost Regressor": AdaBoostRegressor()
 }
 
@@ -93,5 +92,3 @@ for i in range(len(list(models))):
     print('\n')
 
 print(pd.DataFrame(list(zip(model_list, r2_list)), columns=['Model Name', 'R2_Score']).sort_values(by=["R2_Score"],ascending=False))
-
-  
