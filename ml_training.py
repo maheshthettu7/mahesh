@@ -8,7 +8,6 @@ df = pd.read_csv("StudentsPerformance.csv")
 streamlit.dataframe(df.head())
 streamlit.title("input data for ml model")
 columns=['gender', 'race_ethnicity', 'parental_level_of_education', 'lunch','test_preparation_course','reading_score','writing_score']
-data=[]
 # for i in columns[:5]:
 #   choice = streamlit.text_input(f'provide input for {i}','sample data')
 #   data.append(str(choice))
@@ -17,7 +16,7 @@ re=streamlit.selectbox("provide input for race_ethnicity:", ['group B', 'group C
 PLE=streamlit.selectbox("Pick some parental_level_of_education:",["bachelor's degree", 'some college', "master's degree","associate's degree", 'high school', 'some high school'])
 Lunch=streamlit.selectbox("Pick some Lunch:",['standard', 'free/reduced'])
 tpc=streamlit.selectbox("Pick some test_preparation_course:",['none', 'completed'])
-data.append(gender,re,PLELunch,tpc)
+data=[gender,re,PLE,Lunch,tpc]
 for i in columns[5:]:
   choice = streamlit.number_input(f'provide input for {i}')
   data.append(choice)
