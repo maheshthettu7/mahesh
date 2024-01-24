@@ -15,17 +15,8 @@ for i in columns[0:5]:
 for i in columns[5:]:
   choice = streamlit.text_input(f'provide input for {i}','sample data')
   data.append(int(str(choice)))
-models = {
-    "Linear Regression": LinearRegression(),
-    "Lasso": Lasso(),
-    "Ridge": Ridge(),
-    "K-Neighbors Regressor": KNeighborsRegressor(),
-    "Decision Tree": DecisionTreeRegressor(),
-    "Random Forest Regressor": RandomForestRegressor(),
-
-    "AdaBoost Regressor": AdaBoostRegressor()
-}
-model_selected=streamlit.selectbox("Pick ml model:", list(models.values()),)
+models = ['LinearRegression()','Lasso()','Ridge()','KNeighborsRegressor()','DecisionTreeRegressor()','RandomForestRegressor()','AdaBoostRegressor()']
+model_selected=streamlit.selectbox("Pick ml model:",models) 
 # pickled_model = pickle.load(open('model.pkl', 'rb'))
 # pickled_model.predict(X_test)
   
